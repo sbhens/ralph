@@ -1,0 +1,52 @@
+{
+  "project": {
+    "name": "MyApp",
+    "description": "Brief description of what the app does and its main purpose",
+    "stack": {
+      "platform": "iOS",
+      "language": "Swift",
+      "framework": "SwiftUI",
+      "storage": "SwiftData",
+      "minDeployment": "iOS 17.0"
+    }
+  },
+  "verification": {
+    "health_check": "make build && make test"
+  },
+  "stories": [
+    {
+      "id": "US-001",
+      "title": "Address Input",
+      "description": "As a user, I can enter a freeform address so that I can evaluate a location",
+      "acceptance_criteria": [
+        "Text field accepts any address string",
+        "Search button triggers evaluation",
+        "Invalid addresses show appropriate error message"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-002",
+      "title": "Save Assessment",
+      "description": "As a user, I can save an assessment locally so I can review it later",
+      "acceptance_criteria": [
+        "Save button persists assessment to local storage",
+        "Assessment includes address, coordinates, all data",
+        "Saved timestamp is recorded",
+        "Use SwiftData for persistence"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-003",
+      "title": "App Navigation",
+      "description": "As a user, I can navigate between main sections with a clean UI",
+      "acceptance_criteria": [
+        "Tab bar with Home, Saved, Settings tabs",
+        "Consistent navigation patterns throughout",
+        "Tapping saved item navigates to detail view"
+      ],
+      "passes": false
+    }
+  ]
+}
