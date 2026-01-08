@@ -23,18 +23,29 @@ Autonomous coding agent loop for iOS/SwiftUI projects. Uses Claude to iterativel
 
 ## Creating a New Project
 
-1. Create a new repo from this template
-2. Initialize submodules: `git submodule update --init --recursive`
-3. Run `./ralph.py init`
-4. Run `./ralph.py run`
+**Option A: GitHub UI**
+1. Click "Use this template" on GitHub
+2. Clone with submodules: `git clone --recurse-submodules <url>`
+
+**Option B: CLI**
+```bash
+gh repo create my-app --template sbhens/ralph --clone
+cd my-app && git submodule update --init --recursive
+```
+
+Then:
+```bash
+./ralph.py init    # Interactive PRD setup
+./ralph.py run     # Start coding loop
+```
 
 ## Updating Skills
 
-Pull latest SwiftUI skills from upstream:
+`skills/SwiftUI` is a submodule from [Dimillian/Skills](https://github.com/Dimillian/Skills). Pull latest:
 
 ```bash
 git submodule update --remote skills/SwiftUI
-git add skills/SwiftUI && git commit -m "Update SwiftUI skills"
+git commit -am "Update SwiftUI skills"
 ```
 
 See `CLAUDE.md` for detailed documentation.
